@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* 
+1. for whole container first provide "display: flex";
+2. flex property is the shorthand property for items in the display conatiner.
+3. "flex = 1" it provides more property such as -> flex-grow/ flex-shrink/flex-basis
+    Default value of flex-grow(0), flex-wrap(1).
+    flex property is used to distribute the remaining space 
+    in parent container by either growing or by shrinking the child conatainer items.
+4. "flex=1"  means it will take all the space in parent conatiner
+5. in Parent conatiner we can use flex-direction i.e column, row, reverse-column, reverse-row
+   by default flex direction is left to right.
+6. Horizantl -> MainAxis Vertical -> CrossAxis.
+7. To adjust items i.e child containers element we can use align-items and justify-content for 
+vertical and horizantal respectively.
+8. "justify-content :" values are "flex-start/flex-end/center/space-around/space-between/space-evenly".
+9. "align-items :" values are "flex-start/flex-end/center/stretch".
+10. "flex-wrap:" values are "wrap-> responsive" | "nowrap-> not responsive".
+11. "Order:" property" has values as "-1,0,1,2....".
+     by default order of each item is 0 if we order one ofthe item as 
+     1 it will take palce at last
+*/
+
+
+.container{
+border: 5px solid black;
+display:flex;
+}
+
+.container div:nth-child(2){
+flex: 1;
+}
+
+.container > div{
+padding: 10px;
+background-color: lightblue;
+border: 1px solid black;
+}
+
+@media screen and (max-width: 600px){
+
+.container{
+flex-wrap:wrap;
+}
+
+.container > div{
+flex 1 1 50%;
+}
+
+.container div:nth-child(2) input{
+text-align: center;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+<div>Home</div>
+<div><input type="text" placeholder="Search"></div>
+<div>Contact</div>
+</div>
+
+</body>
+</html>
